@@ -3,6 +3,7 @@ class HistorialAntropometrico {
   final String jugadorId;
   final double pesoKg;
   final double alturaCm;
+
   final double? grasaCorporal;
   final double? masaMuscular;
   final double? imc;

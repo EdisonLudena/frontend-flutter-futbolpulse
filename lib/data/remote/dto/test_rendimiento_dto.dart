@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../../domain/model/test_rendimiento.dart';
 import '../../../core/utils/parsers.dart';
 

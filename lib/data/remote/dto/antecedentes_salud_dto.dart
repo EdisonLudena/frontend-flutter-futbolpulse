@@ -1,5 +1,6 @@
 import '../../../domain/model/antecedentes_salud.dart';
 
+
 class AntecedentesSaludDto {
   final String? id;
   final String? jugador;

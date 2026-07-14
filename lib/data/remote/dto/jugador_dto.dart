@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+
 import '../../../domain/model/jugador.dart';
 
 part 'jugador_dto.g.dart';

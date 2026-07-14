@@ -3,8 +3,10 @@ class TestRendimiento {
   final String jugadorId;
   final double? velocidad30mSeg;
   final double? velocidad60mSeg;
+
   final int? saltoVerticalCm;
   final int? saltoHorizontalCm;
+
   final double? resistenciaVo2max;
   final int? resistenciaNivel;
   final int? flexibilidadCm;

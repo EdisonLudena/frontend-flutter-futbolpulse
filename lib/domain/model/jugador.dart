@@ -7,6 +7,7 @@ class Jugador {
   final DateTime fechaNacimiento;
   final String? fotoUrl;
   final int? numeroCamiseta;
+
   final String pieDominante; // 'Derecho', 'Izquierdo', 'Ambidiestro'
   final String? nacionalidad;
   final String? documentoIdentidad;

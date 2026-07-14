@@ -43,3 +43,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+<<<<<<< Updated upstream
+=======
+
+# Environments
+.env
+.env.*
+!.env.example
+>>>>>>> Stashed changes

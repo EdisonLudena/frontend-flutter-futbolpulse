@@ -1,4 +1,5 @@
 import '../../../domain/model/historial_antropometrico.dart';
+
 import '../../../core/utils/parsers.dart';
 
 class HistorialAntropometricoDto {

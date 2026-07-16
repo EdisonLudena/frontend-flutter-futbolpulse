@@ -3,6 +3,7 @@ import '../../../domain/model/reporte_scouting.dart';
 
 part 'reporte_scouting_dto.g.dart';
 
+
 @JsonSerializable()
 class ReporteScoutingDto {
   final String? id;

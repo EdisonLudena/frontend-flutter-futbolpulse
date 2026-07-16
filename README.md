@@ -36,7 +36,6 @@
     Crea un archivo `.env` en la raíz del proyecto (basado en `.env.example`):
     ```env
     API_BASE_URL=http://futbol-stats-api.uaeftt-ute.site/api/
-    API_BASE_URL=http://10.0.2.2:8000/api/
     ```
     *Nota: `10.0.2.2` es la dirección para acceder al localhost de tu PC desde el emulador de Android.*
 

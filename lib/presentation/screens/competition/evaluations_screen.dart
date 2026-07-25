@@ -38,7 +38,7 @@ final resolvedEvaluationsProvider = FutureProvider<List<EvaluacionPostPartido>>(
       esVisibleJugador: ev.esVisibleJugador,
       creadoEn: ev.creadoEn,
       nombreJugador: player?.nombreCompleto ?? "Jugador desconocido",
-      rivalPartido: match?.rival ?? "Rival desconocido",
+      rivalPartido: '${match?.equipoLocal ?? "Local"} vs ${match?.equipoVisitante ?? "Visitante"}',
     );
   }).toList();
 });
@@ -75,7 +75,7 @@ class EvaluationsScreen extends ConsumerWidget {
                           ),
                         ),
                         title: Text(
-                          '${ev.nombreJugador} - vs ${ev.rivalPartido}',
+                          '${ev.nombreJugador} - ${ev.rivalPartido}',
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Column(

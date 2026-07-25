@@ -143,7 +143,7 @@ class _CreateEvaluationScreenState extends ConsumerState<CreateEvaluationScreen>
               DropdownButtonFormField<String>(
                 value: _selectedMatchId,
                 decoration: const InputDecoration(labelText: 'Seleccionar Partido', prefixIcon: Icon(Icons.sports_soccer)),
-                items: _partidos.map((m) => DropdownMenuItem(value: m.id, child: Text('vs ${m.rival}'))).toList(),
+                items: _partidos.map((m) => DropdownMenuItem(value: m.id, child: Text('${m.equipoLocal} vs ${m.equipoVisitante}'))).toList(),
                 onChanged: (v) => setState(() => _selectedMatchId = v), // DESBLOQUEADO
                 validator: (v) => v == null ? 'Selecciona un partido' : null,
               ),

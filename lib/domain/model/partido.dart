@@ -1,10 +1,10 @@
 class Partido {
   final String id;
   final String categoriaId;
-  final String? entidadId; // Nuevo campo para filtrar por Club
+  final String? entidadId; // Mantenemos para compatibilidad si es necesario
   final String? sedeId;
-  final String rival;
-  final bool esLocal;
+  final String equipoLocal;
+  final String equipoVisitante;
   final DateTime fecha;
   final String tipoPartido;
   final int golesFavor;
@@ -18,8 +18,8 @@ class Partido {
     required this.categoriaId,
     this.entidadId,
     this.sedeId,
-    required this.rival,
-    required this.esLocal,
+    required this.equipoLocal,
+    required this.equipoVisitante,
     required this.fecha,
     required this.tipoPartido,
     required this.golesFavor,

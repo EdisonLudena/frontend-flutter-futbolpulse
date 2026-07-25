@@ -85,7 +85,7 @@ class MatchDetailScreen extends ConsumerWidget {
                     // Columna Visitante con Flechas
                     _buildScoreController(ref, currentMatch, isLocal: false, isPremium: isPremium),
                     
-                    Expanded(child: _buildTeamName(currentMatch.rival.toUpperCase())),
+                    Expanded(child: _buildTeamName('${currentMatch.equipoLocal} vs ${currentMatch.equipoVisitante}'.toUpperCase())),
                   ],
                 ),
                 

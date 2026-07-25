@@ -237,7 +237,7 @@ class _MatchResultCard extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Text(match.rival.toUpperCase(), 
+            child: Text('${match.equipoLocal} vs ${match.equipoVisitante}'.toUpperCase(), 
               style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 13, color: AppColors.pitchPrimary)),
           ),
           Container(

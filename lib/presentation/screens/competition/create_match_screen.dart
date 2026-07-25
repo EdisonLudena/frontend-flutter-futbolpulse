@@ -19,9 +19,9 @@ class CreateMatchScreen extends ConsumerStatefulWidget {
 
 class _CreateMatchScreenState extends ConsumerState<CreateMatchScreen> {
   final _formKey = GlobalKey<FormState>();
-  late TextEditingController _rivalController;
+  late TextEditingController _equipoLocalController;
+  late TextEditingController _equipoVisitanteController;
   late DateTime _selectedDate;
-  late bool _esLocal;
   late String _estado;
   String? _selectedCategoryId;
   bool _isLoading = false;
@@ -31,9 +31,9 @@ class _CreateMatchScreenState extends ConsumerState<CreateMatchScreen> {
   void initState() {
     super.initState();
     final p = widget.partidoParaEditar;
-    _rivalController = TextEditingController(text: p?.rival ?? '');
+    _equipoLocalController = TextEditingController(text: p?.equipoLocal ?? '');
+    _equipoVisitanteController = TextEditingController(text: p?.equipoVisitante ?? '');
     _selectedDate = p?.fecha ?? DateTime.now();
-    _esLocal = p?.esLocal ?? true;
     _estado = p?.estadoPartido ?? 'Programado';
     _selectedCategoryId = p?.categoriaId;
     
@@ -69,8 +69,8 @@ class _CreateMatchScreenState extends ConsumerState<CreateMatchScreen> {
       setState(() => _isLoading = true);
       try {
         final data = {
-          'rival': _rivalController.text,
-          'es_local': _esLocal,
+          'equipo_local': _equipoLocalController.text,
+          'equipo_visitante': _equipoVisitanteController.text,
           'fecha': _selectedDate.toUtc().toIso8601String(),
           'estado_partido': _estado,
           'categoria': _selectedCategoryId,
@@ -124,8 +124,14 @@ class _CreateMatchScreenState extends ConsumerState<CreateMatchScreen> {
               child: Column(
                 children: [
                   TextFormField(
-                    controller: _rivalController,
-                    decoration: const InputDecoration(labelText: 'Nombre del Rival', prefixIcon: Icon(Icons.shield_outlined)),
+                    controller: _equipoLocalController,
+                    decoration: const InputDecoration(labelText: 'Equipo Local', prefixIcon: Icon(Icons.shield_outlined)),
+                    validator: (v) => v == null || v.isEmpty ? 'Obligatorio' : null,
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: _equipoVisitanteController,
+                    decoration: const InputDecoration(labelText: 'Equipo Visitante', prefixIcon: Icon(Icons.shield_outlined)),
                     validator: (v) => v == null || v.isEmpty ? 'Obligatorio' : null,
                   ),
                   const SizedBox(height: 20),
@@ -136,14 +142,6 @@ class _CreateMatchScreenState extends ConsumerState<CreateMatchScreen> {
                     items: _categorias.map((c) => DropdownMenuItem(value: c.id, child: Text(c.nombre))).toList(),
                     onChanged: (v) => setState(() => _selectedCategoryId = v),
                     validator: (v) => v == null ? 'Selecciona una categoría' : null,
-                  ),
-                  const SizedBox(height: 20),
-
-                  SwitchListTile(
-                    title: const Text('¿Jugamos de Local?'),
-                    value: _esLocal,
-                    activeColor: AppColors.gold,
-                    onChanged: (v) => setState(() => _esLocal = v),
                   ),
                   const SizedBox(height: 20),
                   

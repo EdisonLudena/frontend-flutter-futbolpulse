@@ -7,26 +7,26 @@ part of 'partido_dto.dart';
 // **************************************************************************
 
 PartidoDto _$PartidoDtoFromJson(Map<String, dynamic> json) => PartidoDto(
-      id: json['id'] as String?,
-      rival: json['rival'] as String?,
-      esLocal: json['es_local'] as bool?,
-      fecha: json['fecha'] as String?,
-      tipoPartido: json['tipo_partido'] as String?,
-      golesFavor: (json['goles_favor'] as num?)?.toInt(),
-      golesContra: (json['goles_contra'] as num?)?.toInt(),
-      resultadoFinal: json['resultado_final'] as String?,
-      estadoPartido: json['estado_partido'] as String?,
-      observaciones: json['observaciones'] as String?,
-      categoria: json['categoria'] as String?,
-      sede: json['sede'] as String?,
-      entidad: json['entidad'] as String?,
-    );
+  id: json['id'] as String?,
+  equipoLocal: json['equipo_local'] as String?,
+  equipoVisitante: json['equipo_visitante'] as String?,
+  fecha: json['fecha'] as String?,
+  tipoPartido: json['tipo_partido'] as String?,
+  golesFavor: (json['goles_favor'] as num?)?.toInt(),
+  golesContra: (json['goles_contra'] as num?)?.toInt(),
+  resultadoFinal: json['resultado_final'] as String?,
+  estadoPartido: json['estado_partido'] as String?,
+  observaciones: json['observaciones'] as String?,
+  categoria: json['categoria'] as String?,
+  sede: json['sede'] as String?,
+  entidad: json['entidad'] as String?,
+);
 
 Map<String, dynamic> _$PartidoDtoToJson(PartidoDto instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'rival': instance.rival,
-      'es_local': instance.esLocal,
+      'equipo_local': instance.equipoLocal,
+      'equipo_visitante': instance.equipoVisitante,
       'fecha': instance.fecha,
       'tipo_partido': instance.tipoPartido,
       'goles_favor': instance.golesFavor,

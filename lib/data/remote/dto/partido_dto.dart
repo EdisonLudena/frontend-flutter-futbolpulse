@@ -6,9 +6,10 @@ part 'partido_dto.g.dart';
 @JsonSerializable()
 class PartidoDto {
   final String? id;
-  final String? rival;
-  @JsonKey(name: 'es_local')
-  final bool? esLocal;
+  @JsonKey(name: 'equipo_local')
+  final String? equipoLocal;
+  @JsonKey(name: 'equipo_visitante')
+  final String? equipoVisitante;
   final String? fecha;
   @JsonKey(name: 'tipo_partido')
   final String? tipoPartido;
@@ -29,8 +30,8 @@ class PartidoDto {
 
   PartidoDto({
     this.id,
-    this.rival,
-    this.esLocal,
+    this.equipoLocal,
+    this.equipoVisitante,
     this.fecha,
     this.tipoPartido,
     this.golesFavor,
@@ -50,8 +51,8 @@ class PartidoDto {
         categoriaId: categoria ?? '',
         entidadId: entidad, // Pasamos el club al modelo de dominio
         sedeId: sede,
-        rival: rival ?? 'Rival desconocido',
-        esLocal: esLocal ?? true,
+        equipoLocal: equipoLocal ?? 'Local',
+        equipoVisitante: equipoVisitante ?? 'Visitante',
         fecha: fecha != null ? DateTime.parse(fecha!) : DateTime.now(),
         tipoPartido: tipoPartido ?? 'Liga',
         golesFavor: golesFavor ?? 0,

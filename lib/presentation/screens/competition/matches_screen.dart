@@ -91,13 +91,13 @@ class _MatchCard extends ConsumerWidget {
             const SizedBox(height: 12),
             Row(
               children: [
-                Expanded(child: Text(partido.esLocal ? teamName : partido.rival, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.bold))),
+                Expanded(child: Text(partido.equipoLocal, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.bold))),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                   decoration: BoxDecoration(color: AppColors.lineDark, borderRadius: BorderRadius.circular(8)),
                   child: Text('${partido.golesFavor} - ${partido.golesContra}', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
-                Expanded(child: Text(partido.esLocal ? partido.rival : teamName, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.bold))),
+                Expanded(child: Text(partido.equipoVisitante, textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.bold))),
               ],
             ),
             const SizedBox(height: 12),

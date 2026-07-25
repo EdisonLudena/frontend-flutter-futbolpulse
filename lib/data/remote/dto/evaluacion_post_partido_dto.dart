@@ -53,10 +53,9 @@ class EvaluacionPostPartidoDto {
     if (partido is String) pId = partido;
     else if (partido is Map) {
       pId = partido['id'] ?? '';
-      rival = partido['rival'];
+      rival = "${partido['equipo_local'] ?? 'Local'} vs ${partido['equipo_visitante'] ?? 'Visitante'}";
     }
     if (pId.isEmpty) pId = partidoId ?? '';
-
     // Extraer ID de Jugador (sea String o Mapa)
     String jId = '';
     String? nombreJ;
